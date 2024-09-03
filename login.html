@@ -155,7 +155,11 @@
             if (email === "k@gmail.com" && password === "12345") {
                 window.location.href = "farmer.html";
                 // Redirect to another page or perform some action
-            } else {
+            } 
+            else if(email === "v@gmail.com" && password === "12345"){
+                 window.location.href = "merchant.html";
+            }
+            else {
                 alert("Invalid email or password. Please try again.");
             }
         });
