@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "start": "vite"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.10",
+    "postcss": "^8.4.44",
+    "tailwindcss": "^3.4.10"
+  },
+  "dependencies": {
+    "@material-tailwind/react": "^2.1.9",
+    "i18next": "^23.14.0",
+    "react-i18next": "^15.0.1"
+  }
+}

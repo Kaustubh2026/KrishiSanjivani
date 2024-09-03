@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- from node_modules -->
+    <script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
+    <!-- from cdn -->
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+    <!-- Material Icons Link -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
+    <!-- script -->
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+    </style>
+    <title>KrishiSanjivani</title>
+</head>
+
+<body>
+    <s-header></s-header>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <section class="px-8 py-20 container mx-auto">
+        <h5 class="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900">
+            Farmer's Basic Information
+        </h5>
+        <p
+            class="block antialiased font-sans text-sm font-light leading-normal text-inherit text-gray-600 font-normal mt-1">
+            Please fill in your details to create an account.
+        </p>
+        <div class="flex flex-col mt-8">
+            <div class="mb-6 flex flex-col items-end gap-4 md:flex-row">
+                <div class="w-full">
+                    <p
+                        class="block antialiased font-sans text-sm font-light leading-normal text-blue-gray-900 mb-2 font-medium">
+                        First Name
+                    </p>
+                    <div class="relative w-full min-w-[200px] h-11">
+                        <input placeholder="First Name" name="firstname"
+                            class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100 text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-gray-900 w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200" />
+                    </div>
+                </div>
+                <div class="w-full">
+                    <p
+                        class="block antialiased font-sans text-sm font-light leading-normal text-blue-gray-900 mb-2 font-medium">
+                        Last Name
+                    </p>
+                    <div class="relative w-full min-w-[200px] h-11">
+                        <input placeholder="Last Name" name="lastname"
+                            class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100 text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-gray-900 w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6 flex flex-col gap-4 md:flex-row">
+                <div class="w-full">
+                    <p
+                        class="block antialiased font-sans text-sm font-light leading-normal text-blue-gray-900 mb-2 font-medium">
+                        Aadhar Card Number
+                    </p>
+                    <div class="relative w-full min-w-[200px] h-11">
+                        <input placeholder="Enter your Aadhar Card Number" name="aadhar"
+                            class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100 text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-gray-900 w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6 flex flex-col gap-4 md:flex-row">
+                <div class="w-full">
+                    <p
+                        class="block antialiased font-sans text-sm font-light leading-normal text-blue-gray-900 mb-2 font-medium">
+                        Email
+                    </p>
+                    <div class="relative w-full min-w-[200px] h-11">
+                        <input placeholder="yourname@mail.com" name="email" id="email"
+                            class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100 text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-gray-900 w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200" />
+                    </div>
+                </div>
+                <div class="w-full">
+                    <p
+                        class="block antialiased font-sans text-sm font-light leading-normal text-blue-gray-900 mb-2 font-medium">
+                        Confirm Email
+                    </p>
+                    <div class="relative w-full min-w-[200px] h-11">
+                        <input name="confirmemail" id="confirm-email" placeholder="yourname@mail.com"
+                            class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100 text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-gray-900 w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6 flex flex-col items-end gap-4 md:flex-row">
+                <div class="w-full">
+                    <p
+                        class="block antialiased font-sans text-sm font-light leading-normal text-blue-gray-900 mb-2 font-medium">
+                        Location
+                    </p>
+                    <div class="relative w-full min-w-[200px] h-11">
+                        <input placeholder="Enter your location" name="location" id="location"
+                            class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100 text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-gray-900 w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200" />
+                    </div>
+                </div>
+                <div class="w-full">
+                    <p
+                        class="block antialiased font-sans text-sm font-light leading-normal text-blue-gray-900 mb-2 font-medium">
+                        Phone Number
+                    </p>
+                    <div class="relative w-full min-w-[200px] h-11">
+                        <input placeholder="Enter your phone number" name="phone" id="phone"
+                            class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100 text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-gray-900 w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6 flex flex-col gap-4 md:flex-row">
+                <div class="w-full">
+                    <p
+                        class="block antialiased font-sans text-sm font-light leading-normal text-blue-gray-900 mb-2 font-medium">
+                        Date of Birth
+                    </p>
+                    <div class="relative w-full min-w-[200px] h-11">
+                        <input type="date" name="dob" id="dob" placeholder="dd/mm/yyyy"
+                            class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100 text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-gray-900 w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200" />
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="mb-6 flex flex-col gap-4 md:flex-row">
+                <div class="w-full">
+                    <p
+                        class="block antialiased font-sans text-sm font-light leading-normal text-blue-gray-900 mb-2 font-medium">
+                        Number of Years Farming
+                    </p>
+                    <input type="number" name="yearsFarming" id="yearsFarming" placeholder="Enter number of years"
+                        class="peer w-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100 text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-gray-900" />
+                </div>
+            </div>
+            <div class="mb-6 flex flex-col gap-4 md:flex-row">
+                <div class="w-full">
+                    <p
+                        class="block antialiased font-sans text-sm font-light leading-normal text-blue-gray-900 mb-2 font-medium">
+                        Area of the farm own 
+                    </p>
+                    <input type="number" name="yearsFarming" id="yearsFarming" placeholder="Enter number of Arcs"
+                        class="peer w-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100 text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-gray-900" />
+                </div>
+            </div>
+
+            <div class="flex justify-end gap-4">
+                <button class="bg-gray-300 text-gray-700 py-2 px-6 rounded-md" type="button">
+                    Cancel
+                </button>
+                <button class="bg-blue-600 text-white py-2 px-6 rounded-md" type="submit">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+        <!-- <s-footer></s-footer> -->
+
+
+
+    </section>
+    <script src="./customreusable.js"></script>
+    <s-footer></s-footer>
+</body>
+
+</html>

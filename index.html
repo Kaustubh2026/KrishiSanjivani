@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content-wrapper {
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="google_translate_button"
+        class="fixed right-4 top-20 bg-green-800 text-white p-2 rounded-full shadow-md hover:bg-green-700 z-50">
+        <i class="fas fa-globe"></i>
+    </button>
+
+    <!-- Modal for Google Translate -->
+    <div id="google_translate_modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="google_translate_element"></div>
+        </div>
+    </div>
+
+    <div class="grid min-h-screen w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+        <div class="-m-6 max-h-[768px] w-[calc(100%+48px)] overflow-scroll">
+            <!-- Navbar -->
+            <nav
+                class="sticky top-0 z-10 block w-full max-w-full px-4 py-2 text-white bg-green-900 border rounded-none shadow-md h-max border-white/80 bg-opacity-80 backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4">
+                <div class="flex items-center justify-between text-white">
+                    <a href="index.html"><img src="image-removebg-preview.png" alt="Logo" class="h-8 mr-2"></a>
+                    <div class="flex items-center gap-4">
+                        <div class="hidden mr-4 lg:block">
+                            <ul
+                                class="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+                                <li
+                                    class="block p-1 font-sans text-sm antialiased font-normal leading-normal text-white">
+                                    <a href="index.html" class="flex items-center">Home</a>
+                                </li>
+                                <li
+                                    class="block p-1 font-sans text-sm antialiased font-normal leading-normal text-white">
+                                    <a href="aboutus.html" class="flex items-center">About Us</a>
+                                </li>
+                                <li
+                                    class="block p-1 font-sans text-sm antialiased font-normal leading-normal text-white">
+                                    <a href="featurepage.html" class="flex items-center">Feature Page</a>
+                                </li>
+                                <li
+                                    class="block p-1 font-sans text-sm antialiased font-normal leading-normal text-white">
+                                    <a href="#" class="flex items-center">Docs</a>
+                                </li>
+                                <li
+                                    class="block p-1 font-sans text-sm antialiased font-normal leading-normal text-white">
+                                    <a href="contactus.html" class="flex items-center">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-x-1">
+                            <button
+                                class="hidden select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                                type="button">
+                                <a href="login.html"><span>Log in</span></a>
+                            </button>
+                        </div>
+                        <button
+                            class="relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-inherit transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+                            type="button">
+                            <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16">
+                                    </path>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero Section -->
+           
+            <section class="bg-gradient-to-r from-green-800 to-green-500 text-white py-20">
+                <div class="container mx-auto text-center">
+                    <h1 class="text-5xl font-bold mb-4">Predict Prices Accurately, Empower Farmers, Stabilize Markets
+                    </h1>
+                    <p class="text-xl mb-8">Utilize our advanced tools to forecast prices and ensure market stability.
+                    </p>
+                    <a href="#features"
+                        class="bg-white text-green-800 font-bold py-3 px-6 rounded-full text-lg hover:bg-gray-100 transition">
+                        Learn More
+                    </a>
+                </div>
+            </section>
+
+            <!-- Key Features -->
+            <section id="features" class="py-16 bg-green-100">
+                <div class="container mx-auto text-center">
+                    <h2 class="text-4xl font-bold mb-8">Key Features</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <i class="fas fa-chart-line fa-2x text-green-500 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">Real-time Price Prediction</h3>
+                            <p>Get accurate price forecasts in real-time to make informed decisions.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <i class="fas fa-tag fa-2x text-green-500 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">Minimum Price Guarantee</h3>
+                            <p>Ensure fair prices with our guaranteed minimum price feature.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <i class="fas fa-shield-alt fa-2x text-green-500 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">Fraud Prevention with QR/USSD Integration</h3>
+                            <p>Protect transactions with our advanced fraud prevention technology.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <i class="fas fa-warehouse fa-2x text-green-500 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">Buffer Stock Management</h3>
+                            <p>Manage stock levels efficiently to prevent shortages and surpluses.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials/Success Stories -->
+            <section class="py-16">
+                <div class="container mx-auto text-center">
+                    <h2 class="text-4xl font-bold mb-8">Testimonials</h2>
+                    <div class="flex flex-wrap justify-center">
+                        <div class="bg-white p-6 rounded-lg shadow-lg mx-4 my-4 w-full md:w-1/2 lg:w-1/3">
+                            <blockquote class="text-xl italic mb-4">“The price predictions were spot on! It helped us
+                                make better decisions and stabilize our income.”</blockquote>
+                            <cite class="font-semibold">Farmer A</cite>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg mx-4 my-4 w-full md:w-1/2 lg:w-1/3">
+                            <blockquote class="text-xl italic mb-4">“With the minimum price guarantee, we never had to
+                                worry about market fluctuations affecting our profits.”</blockquote>
+                            <cite class="font-semibold">Merchant B</cite>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="bg-green-800 text-white py-8">
+                <div class="container mx-auto text-center">
+                    <p class="mb-4">Contact us: <a href="mailto:info@yourdomain.com"
+                            class="underline">info@yourdomain.com</a></p>
+                    <p class="mb-4">Follow us on
+                        <a href="#" class="text-blue-500 hover:underline">Facebook</a>,
+                        <a href="#" class="text-blue-400 hover:underline">Twitter</a>,
+                        <a href="#" class="text-pink-500 hover:underline">Instagram</a>
+                    </p>
+                    <p class="text-sm">© 2024 Your Company. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="./customreusable.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+
+        document.getElementById('google_translate_button').addEventListener('click', function () {
+            var modal = document.getElementById('google_translate_modal');
+            modal.style.display = "block";
+        });
+
+        document.getElementsByClassName('close')[0].addEventListener('click', function () {
+            var modal = document.getElementById('google_translate_modal');
+            modal.style.display = "none";
+        });
+
+        window.onclick = function (event) {
+            var modal = document.getElementById('google_translate_modal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+        
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>
