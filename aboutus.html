@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content-wrapper {
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <title>KrishiSanjivani</title>
+</head>
+
+<body>
+    <button id="google_translate_button"
+        class="fixed right-4 top-20 bg-green-800 text-white p-2 rounded-full shadow-md hover:bg-green-700 z-50">
+        <i class="fas fa-globe"></i>
+    </button>
+
+    <!-- Modal for Google Translate -->
+    <div id="google_translate_modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="google_translate_element"></div>
+        </div>
+    </div>
+
+    <div class="grid min-h-screen w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+        <div class="-m-6 max-h-[768px] w-[calc(100%+48px)] overflow-scroll">
+            <!-- Navbar -->
+            <nav
+                class="sticky top-0 z-10 block w-full max-w-full px-4 py-2 text-white bg-green-900 border rounded-none shadow-md h-max border-white/80 bg-opacity-80 backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4">
+                <div class="flex items-center justify-between text-white">
+                    <a href="index.html"><img src="image-removebg-preview.png" alt="Logo" class="h-8 mr-2"></a>
+                    <div class="flex items-center gap-4">
+                        <div class="hidden mr-4 lg:block">
+                            <ul
+                                class="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+                                <li
+                                    class="block p-1 font-sans text-sm antialiased font-normal leading-normal text-white">
+                                    <a href="index.html" class="flex items-center">Home</a>
+                                </li>
+                                <li
+                                    class="block p-1 font-sans text-sm antialiased font-normal leading-normal text-white">
+                                    <a href="aboutus.html" class="flex items-center">About Us</a>
+                                </li>
+                                <li
+                                    class="block p-1 font-sans text-sm antialiased font-normal leading-normal text-white">
+                                    <a href="featurepage.html" class="flex items-center">Feature Page</a>
+                                </li>
+                                <li
+                                    class="block p-1 font-sans text-sm antialiased font-normal leading-normal text-white">
+                                    <a href="#" class="flex items-center">Docs</a>
+                                </li>
+                                <li
+                                    class="block p-1 font-sans text-sm antialiased font-normal leading-normal text-white">
+                                    <a href="contactus.html" class="flex items-center">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-x-1">
+                            <button
+                                class="hidden select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                                type="button">
+                                <a href="login.html"><span>Log in</span></a>
+                            </button>
+                        </div>
+                        <button
+                            class="relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-inherit transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+                            type="button">
+                            <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16">
+                                    </path>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <section class="min-h-screen py-8 px-8 lg:py-28">
+                <div class="container mx-auto">
+                    <div class="mb-16 text-center lg:mb-28">
+                        <h1 class="block antialiased tracking-normal font-sans font-semibold leading-tight text-blue-gray-900 my-2 !text-2xl lg:!text-4xl">
+                            Meet the Team
+                        </h1>
+                        <p class="block antialiased font-sans text-xl font-normal leading-relaxed text-inherit mx-auto w-full !text-gray-500 max-w-4xl">
+                            From visionary leadership to creative talent, and technical wizards, each team member plays a pivotal role in delivering the exceptional service and innovative solutions.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+                        <!-- Other Team Members -->
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA]">
+                            <div class="p-6 text-center">
+                                <img src="#" alt="Anushka Kausadikar"
+                                    class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5
+                                    class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Anushka Kausadikar
+                                </h5>
+                                <p
+                                    class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Team Leader
+                                </p>
+                                <p
+                                    class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Flask / Database
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <a href="https://www.instagram.com/anukausadikar/" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-instagram"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="https://github.com/anukausadikar" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-github"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/anushka-kausadikar-4043a125b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BuLNvtb3FRQGuF%2Bg0RmI2yw%3D%3D"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-linkedin"></i></span>
+                                        </button>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA]">
+                            <div class="p-6 text-center">
+                                <img src="ImagesT/Vaishnavi.png" alt="Ryan Samuel"
+                                    class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5
+                                    class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Vaishnavi Shivade
+                                </h5>
+                                <p
+                                    class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Team Member
+                                </p>
+                                <p
+                                    class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Frontend Developer
+
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <a href="https://www.instagram.com/s.vaiishnavi/" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-instagram"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="https://github.com/v-8149" target="_blank" rel="noopener noreferrer">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-github"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/vaishnavi-shivade-454931260/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BuLNvtb3FRQGuF%2Bg0RmI2yw%3D%3D"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-linkedin"></i></span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA]">
+                            <div class="p-6 text-center">
+                                <img src="/ImagesT/devendra.png" alt="Nora Hazel"
+                                    class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5
+                                    class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Devendra Kawade
+                                </h5>
+                                <p
+                                    class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Team Member
+                                </p>
+                                <p
+                                    class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Machine Learning Model Developer
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <a href="https://www.instagram.com/devendra_kawade_/" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-instagram"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="https://www.instagram.com/anukausadikar/" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-github"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/devendra-kawade-a11470303/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BuLNvtb3FRQGuF%2Bg0RmI2yw%3D%3D"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-linkedin"></i></span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA]">
+                            <div class="p-6 text-center">
+                                <img src="/ImagesT/shreenath.png" alt="Otto Gonzalez"
+                                    class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5
+                                    class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Shreenath Ubale
+                                </h5>
+                                <p
+                                    class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Team Member
+                                </p>
+                                <p
+                                    class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Machine Learning Model Developer
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <a href="https://www.instagram.com/shreenath_ubale/" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-instagram"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="https://github.com/ShreenathUb" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-github"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/shreenath-ubale-050681249/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3BuLNvtb3FRQGuF%2Bg0RmI2yw%3D%3D"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-linkedin"></i></span>
+                                        </button>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Kaustubh Muley -->
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA] md:col-span-2">
+                            <div class="p-6 text-center">
+                                <img src="ImagesT/kaustubh.png" alt="Kaustubh Muley" class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5 class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Kaustubh Muley
+                                </h5>
+                                <p class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Team Member
+                                </p>
+                                <p class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Frontend Design and Developer
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <a href="https://www.instagram.com/_kaus2bh/" target="_blank" rel="noopener noreferrer">
+                                        <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-instagram"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="https://github.com/Kaustubh2026" target="_blank" rel="noopener noreferrer">
+                                        <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-github"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/kaustubh-muley-827b76257/" target="_blank" rel="noopener noreferrer">
+                                        <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-linkedin"></i></span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Omkar Kawathekar -->
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA] md:col-span-2">
+                            <div class="p-6 text-center">
+                                <img src="ImagesT/omkar.jpg" alt="Omkar Kawathekar" class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5 class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Omkar Kawathekar
+                                </h5>
+                                <p class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Team Member
+                                </p>
+                                <p class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Backend Developer
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <a href="https://www.instagram.com/omkar_kawthekar/" target="_blank" rel="noopener noreferrer">
+                                        <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-instagram"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="https://github.com/omkar-kawathekar" target="_blank" rel="noopener noreferrer">
+                                        <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-github"></i></span>
+                                        </button>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/omkar-kawathekar/" target="_blank" rel="noopener noreferrer">
+                                        <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all 
+                                               disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 h-10 
+                                               rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20 flex justify-center items-center"
+                                            type="button" data-ripple-dark="true">
+                                            <span class="text-lg"><i class="fab fa-linkedin"></i></span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+
+
+            <!-- Footer -->
+            <footer class="bg-green-800 text-white py-8">
+                <div class="container mx-auto text-center">
+                    <p class="mb-4">Contact us: <a href="mailto:info@yourdomain.com"
+                            class="underline">info@yourdomain.com</a></p>
+                    <p class="mb-4">Follow us on
+                        <a href="#" class="text-blue-500 hover:underline">Facebook</a>,
+                        <a href="#" class="text-blue-400 hover:underline">Twitter</a>,
+                        <a href="#" class="text-pink-500 hover:underline">Instagram</a>
+                    </p>
+                    <p class="text-sm">© 2024 Your Company. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="./customreusable.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+
+        document.getElementById('google_translate_button').addEventListener('click', function () {
+            var modal = document.getElementById('google_translate_modal');
+            modal.style.display = "block";
+        });
+
+        document.getElementsByClassName('close')[0].addEventListener('click', function () {
+            var modal = document.getElementById('google_translate_modal');
+            modal.style.display = "none";
+        });
+
+        window.onclick = function (event) {
+            var modal = document.getElementById('google_translate_modal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>
